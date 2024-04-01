@@ -1,5 +1,6 @@
 package com.ftc.rest.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,23 +18,28 @@ public class Tags {
 	}
 	
 	@GetMapping("/tags")
-	public String getTags() {
-		return "GET tags endpoint";
-	}
-	
-	@PostMapping("/tags/{tag}")
-	public String postTags(@PathVariable("tag") String tag) {
-		return "POST tag: " + tag;
-	}
-	
-	@PutMapping("/tags/{tag}")
-	public String putTags(@PathVariable("tag") String tag) {
-		return "PUT tag: " + tag;
+	public ResponseEntity<String> getTags() {
+		return ResponseEntity.ok("GET tags endpoint");
 	}
 	
 	@GetMapping("/tags/{tag}")
-	public String deleteTags(@PathVariable("tag") String tag) {
-		return "DELETE tag: " + tag;
+	public  ResponseEntity<String> getTag(@PathVariable("tag") String tag) {
+		return ResponseEntity.ok("GET tag: " + tag);
+	}
+	
+	@PostMapping("/tags/{tag}")
+	public ResponseEntity<String> postTag(@PathVariable("tag") String tag) {
+		return ResponseEntity.ok("POST tag: " + tag);
+	}
+	
+	@PutMapping("/tags/{tag}")
+	public ResponseEntity<String> putTag(@PathVariable("tag") String tag) {
+		return ResponseEntity.ok("PUT tag: " + tag);
+	}
+	
+	@GetMapping("/tags/{tag}")
+	public ResponseEntity<String> deleteTag(@PathVariable("tag") String tag) {
+		return ResponseEntity.ok("DELETE tag: " + tag);
 	}
 	
 }
