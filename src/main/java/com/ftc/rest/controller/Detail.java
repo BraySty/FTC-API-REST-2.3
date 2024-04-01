@@ -1,6 +1,7 @@
 package com.ftc.rest.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,35 +12,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/V0")
 public class Detail {
-
-	@RequestMapping("/v0")
-	public String home() {
-		return "API version 0";
-	}
 	
 	@GetMapping("/details")
 	public  ResponseEntity<String> getDetails() {
 		return ResponseEntity.ok("GET details endpoint");
 	}
 	
-	@GetMapping("/details/{detail}")
-	public  ResponseEntity<String> getDetail(@PathVariable("detail") String detail) {
-		return ResponseEntity.ok("GET detail: " + detail);
+	@GetMapping("/details/{date}")
+	public  ResponseEntity<String> getDetail(@PathVariable("date") String line) {
+		return ResponseEntity.ok("GET detail: " + line);
 	}
 	
-	@PostMapping("/details/{detail}")
-	public  ResponseEntity<String> postDetail(@PathVariable("detail") String detail) {
-		return ResponseEntity.ok("POST detail: " + detail);
+	@PostMapping("/details/{date}")
+	public  ResponseEntity<String> postDetail(@PathVariable("date") String line) {
+		return ResponseEntity.ok("POST detail: " + line);
 	}
 	
-	@PutMapping("/details/{detail}")
-	public  ResponseEntity<String> putDetail(@PathVariable("detail") String detail) {
-		return ResponseEntity.ok("PUT detail: " + detail);
+	@PutMapping("/details/{date}")
+	public  ResponseEntity<String> putDetail(@PathVariable("date") String line) {
+		return ResponseEntity.ok("PUT detail: " + line);
 	}
 	
-	@GetMapping("/details/{detail}")
-	public  ResponseEntity<String> deleteDetail(@PathVariable("detail") String detail) {
-		return ResponseEntity.ok("DELETE detail: " + detail);
+	@DeleteMapping("/details/{date}")
+	public  ResponseEntity<String> deleteDetail(@PathVariable("date") String line) {
+		return ResponseEntity.ok("DELETE detail: " + line);
 	}
 	
 }

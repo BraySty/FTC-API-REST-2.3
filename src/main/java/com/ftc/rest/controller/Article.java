@@ -1,6 +1,7 @@
 package com.ftc.rest.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,35 +12,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/V0")
 public class Article {
-
-	@RequestMapping("/v0")
-	public String home() {
-		return "API version 0";
-	}
 	
 	@GetMapping("/articles")
 	public  ResponseEntity<String> getArticles() {
 		return ResponseEntity.ok("GET articles endpoint");
 	}
 	
-	@GetMapping("/articles/{article}")
-	public  ResponseEntity<String> getArticle(@PathVariable("article") String article) {
-		return ResponseEntity.ok("GET article: " + article);
+	@GetMapping("/articles/{id}")
+	public ResponseEntity<String> getBlog(@PathVariable("id") ResponseEntity<String> line) {
+		return ResponseEntity.ok("GET article: " + line);
 	}
 	
-	@PostMapping("/articles/{article}")
-	public  ResponseEntity<String> postArticle(@PathVariable("article") String article) {
-		return ResponseEntity.ok("POST article: " + article);
+	@PostMapping("/articles/{id}")
+	public  ResponseEntity<String> postArticle(@PathVariable("id") ResponseEntity<String> line) {
+		return ResponseEntity.ok("POST article: " + line);
 	}
 	
-	@PutMapping("/articles/{article}")
-	public  ResponseEntity<String> putArticle(@PathVariable("article") String article) {
-		return ResponseEntity.ok("PUT article: " + article);
+	@PutMapping("/articles/{id}")
+	public  ResponseEntity<String> putArticle(@PathVariable("id") ResponseEntity<String> line) {
+		return ResponseEntity.ok("PUT article: " + line);
 	}
 	
-	@GetMapping("/articles/{article}")
-	public  ResponseEntity<String> deleteArticle(@PathVariable("article") String article) {
-		return ResponseEntity.ok("DELETE article: " + article);
+	@DeleteMapping("/articles/{id}")
+	public  ResponseEntity<String> deleteArticle(@PathVariable("id") ResponseEntity<String> line) {
+		return ResponseEntity.ok("DELETE article: " + line);
 	}
 	
 }
