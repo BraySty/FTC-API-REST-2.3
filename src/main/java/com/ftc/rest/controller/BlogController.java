@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/V0")
-public class Blog {
+public class BlogController {
 	
 	@GetMapping("/blogs")
 	public  ResponseEntity<String> getBlogs() {

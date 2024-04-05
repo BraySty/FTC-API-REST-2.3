@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/V0")
-public class Project {
+public class ProjectController {
 	
 	@GetMapping("/projects")
 	public  ResponseEntity<String> getProjects() {

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/V0")
-public class Code {
+public class CodeController {
 	
 	@GetMapping("/codes")
 	public  ResponseEntity<String> getCodes() {

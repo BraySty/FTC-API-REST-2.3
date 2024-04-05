@@ -1,0 +1,23 @@
+git clone ... (Clonar repositorio de Git)
+git switch ... (Cambiar de rama)
+git switch -c ... (Crear rama y cambiar a esa misma)
+git branch (Ver en qué rama estás)
+git add . (Guardar todos los archivos)
+git add ... (Guardar archivos en concreto)
+git commit -m "..." (Hacer un commit sin entrar en el editor)
+git commit (Hacer un commit con el editor)
+git push --all origin (Subir cambios)
+git pull (Traer cambios)
+git status (Ver cambios pendientes antes de hacer commit)
+git log (Ver historial de commits)
+git restore --source=HEAD --staged --worktree ... (Deshacer cambios locales sin hacer commit)
+git revert <hash_del_commit> (Revertir un commit)
+git merge ... (Merge de ramas)
+
+Resolver conflictos de merge manualmente y luego:
+git add ...
+git merge --continue
+git diff commit1 commit2 (Ver cambios entre dos commits)
+git tag -a nombre_tag -m "Mensaje" (Crear una etiqueta para un commit específico)
+git push origin --delete nombre_rama (Eliminar una rama remota)
+git branch -d nombre_rama (Eliminar una rama local)

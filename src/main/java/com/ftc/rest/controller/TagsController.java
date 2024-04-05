@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/V0")
-public class Tags {
+public class TagsController {
 	
 	@GetMapping("/tags")
 	public ResponseEntity<String> getTags() {
